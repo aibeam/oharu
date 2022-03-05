@@ -50,12 +50,16 @@
 					오늘의 기록
 				</p>
 			</h1>
-			<textarea placeholder="오늘 당신의 하루는 어땠나요?" maxlength="300"></textarea>
+			<textarea id="text-area" placeholder="오늘 당신의 하루는 어땠나요?"
+				maxlength="300" onkeyup="cntText()" aria-label="입력창"></textarea>
+			<strong id="text-length">
+				<span id="cnt-text">0</span>
+				<span aria-label="자 입니다">&#47;&nbsp;300</span></strong>
 			<div class="submit-area">
 				<label for="add-img">
 					<img id="img-btn" src="https://cdn-icons.flaticon.com/png/128/4653/premium/4653792.png?token=exp=1646481590~hmac=16afcf0619fe9327a9108902bb297a08" alt="이미지 첨부"/>
 				</label>
-        <input id="add-img" type="file" accept="image/jpeg, image/gif"
+        <input id="add-img" type="file" accept="image/*"
 					onchange="addImg()" hidden/>
 				<span id="img-name"></span>
 				<button type="submit" arie-label="게시글 등록">
@@ -89,7 +93,7 @@
 					<span class="feed-date">
 						hh:mm
 					</span>
-					<button type="button" class="reply-btn">
+					<button type="button" class="reply-btn" onclick="replyToggle()">
 						댓글
 					</button>
 				</div>
@@ -102,15 +106,6 @@
 							댓글달기
 						</button>
 					</form>
-					<span class="reply">
-						<strong>글쓴이</strong>
-						<span>
-							댓글임!!
-						</span>
-						<span class="feed-date">
-							hh:mm
-						</span>
-					</span>
 					<span class="reply">
 						<strong>글쓴이</strong>
 						<span>
