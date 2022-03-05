@@ -35,6 +35,7 @@ button {
 	font-family: beanpoleotM00;
 	font-size: 2.5rem;
 	color: white;
+  padding-top: 3px;
 }
 
 #mobile-nav {
@@ -53,6 +54,13 @@ button {
 	color: white;
 	font-weight: bold;
 	text-decoration: none;
+}
+
+.nav-icon {
+  width: 30px;
+  height: 30px;
+  padding: 10px 0;
+  filter: invert(1);
 }
 
 /* Write Section */
@@ -80,17 +88,34 @@ button {
 	border: 1px solid black;
 }
 
-.button-align {
+.submit-area {
 	width: 21.2rem;
 	margin: 0 auto;
-	text-align: right;
 }
+
+#img-btn {
+  width: 30px;
+  cursor: pointer;
+}
+
+#img-name {
+  display: inline-block;
+  height: 40px;
+  width: 200px;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  font-size: 0.8rem;
+  vertical-align: middle;
+
+}
+
 
 #form-area button {
 	background: black;
 	color: white;
 	border: none;
 	padding: 5px 10px;
+  float: right;
 }
 
 

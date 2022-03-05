@@ -5,7 +5,9 @@
 	<meta name="description" content="오늘 당신의 하루는 어땠나요? '오하루'는 오늘 하루 감정을 털어내는 감정 SNS입니다.">
 	<meta name="keywords" content="오늘하루, 오하루, 감정, 감성, 일기, 기록, 다이어리, 음악, 수면음악, ASMR, SNS">
 	<title>오하루 | 오늘의 기록</title>
+
 	<link rel="stylesheet" href="index.css">
+	<script inline="javascript" src="index.js"></script>
 </head>
 <body>
 	<header id="main-nav">
@@ -22,19 +24,19 @@
 			</h2>
 
 			<ul>
-				<li id="icon-music" class="nav-icon">
+				<li>
 					<a href="#">
-						음악 플레이어
+						<img class="nav-icon" src="https://cdn-icons-png.flaticon.com/128/70/70982.png" alt="음악 플레이"/>
 					</a>
 				</li>
-				<li id="icon-diary" class="nav-icon">
+				<li>
 					<a href="#">
-						하루 기록장
+						<img  class="nav-icon" src="https://cdn-icons-png.flaticon.com/128/1386/1386601.png" alt="오하루 기록" />
 					</a>
 				</li>
-				<li id="icon-profile" class="nav-icon">
+				<li>
 					<a href="#">
-						내 정보
+						<img class="nav-icon" src="https://cdn-icons-png.flaticon.com/128/64/64572.png" alt="내 정보" />
 					</a>
 				</li>
 			</ul>
@@ -48,8 +50,14 @@
 					오늘의 기록
 				</p>
 			</h1>
-			<textarea placeholder="오늘 당신의 하루는 어땠나요?"></textarea>
-			<div class="button-align">
+			<textarea placeholder="오늘 당신의 하루는 어땠나요?" maxlength="300"></textarea>
+			<div class="submit-area">
+				<label for="add-img">
+					<img id="img-btn" src="https://cdn-icons.flaticon.com/png/128/4653/premium/4653792.png?token=exp=1646481590~hmac=16afcf0619fe9327a9108902bb297a08" alt="이미지 첨부"/>
+				</label>
+        <input id="add-img" type="file" accept="image/jpeg, image/gif"
+					onchange="addImg()" hidden/>
+				<span id="img-name"></span>
 				<button type="submit" arie-label="게시글 등록">
 					기록하기
 				</button>
@@ -88,14 +96,30 @@
 
 				<div class="reply-section">
 					<form action="#" method="POST" class="reply-input">
-						<input type="text" />
+						<label for="reply" hidden>댓글창</label>
+						<input id="reply" type="text" />
 						<button type="submit" class="reply-submit">
 							댓글달기
 						</button>
 					</form>
-					<span class="reply"><strong>글쓴이</strong> 댓글임!!</span>
-					<span class="reply"><strong>글쓴이</strong> 댓글임!!</span>
-					<span class="reply"><strong>글쓴이</strong> 댓글임!!</span>
+					<span class="reply">
+						<strong>글쓴이</strong>
+						<span>
+							댓글임!!
+						</span>
+						<span class="feed-date">
+							hh:mm
+						</span>
+					</span>
+					<span class="reply">
+						<strong>글쓴이</strong>
+						<span>
+							댓글임!!
+						</span>
+						<span class="feed-date">
+							hh:mm
+						</span>
+					</span>
 				</div>
 			</div>
 		</div>
